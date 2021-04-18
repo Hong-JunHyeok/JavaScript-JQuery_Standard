@@ -53,18 +53,54 @@ if (age >= 20) {
   document.write("당신은 미성년자입니다.");
 }
 ```
+
 이렇게 스크립트 태그안에 작성을 하게 되면, 사용자측에서 프롬프트가 뜨면서 당신의 나이를 물어볼것이다. 그럴 때에 당신이 입력을 하고 기다리면 문서에 조건에 따른 값이 나올것이다.
 
 ## 자바스크립트 기초 문법
 
 자바스크립트의 선언문은 `script`라는 태그가 시작한 부분부터 끝나는 부분까지를 스크립트 영역이라고 한다.
+
 ```html
 <script>
-    자바스크립트 코드;
+  자바스크립트 코드;
 </script>
 ```
 
 이 스크립트는 `head`,`body`에 둬도 상관없는데 이 책에서는 `head`에 넣는다고 하기때문에 `head`에 넣기로 하자.
 
+이제 실제로 한번 해볼건데, 다음과 같이 코드를 작성해보자.
+o
+```javascript
+document.write("환영합니다.");
+```
 
+이렇게 작성하게 되면 HTML을 빌드했을때 화면에 "환영합니다."가 출력될것이다.
+
+<center>
+<iframe
+  src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=lucario&wt=none&l=javascript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%25ED%2599%2598%25EC%2598%2581%25ED%2595%25A9%25EB%258B%2588%25EB%258B%25A4."
+  style="width: 219px; height: 204px; border:0; transform: scale(1); overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
+</center>
+
+자바스크립트는 **객체**지향 언어인데 `document`라는 객체는 문서 객체를 의미하고, 문서 출력 메서드인 `write()`를 사용해서 문서에 출력한다.
+
+**자바스크립트에서 주석처리를 하는 방법.**
+
+```javascript
+// 이렇게 쓰면 한줄 주석.
+
+/*
+이렇게
+쓰면 
+여러줄
+주석
+*/
+
+<!--HTML은 이렇게 사용하지롱-->
+```
+
+> **주석처리를 하는 이유?**
+주석처리를 함으로서, 자바스크립트 선언문 안에 코드가 아닌 설명을 할 수있다. 그래서 내가 쓴 코드에 대한 설명같은 걸 달아놓으면, 나중에 협업할때 코드를 알아 볼 수 있기때문에 큰 장점이 될 수 있다.
 
