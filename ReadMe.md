@@ -96,3 +96,35 @@ document.write("환영합니다.");
 > **주석처리를 하는 이유?**
 주석처리를 함으로서, 자바스크립트 선언문 안에 코드가 아닌 설명을 할 수있다. 그래서 내가 쓴 코드에 대한 설명같은 걸 달아놓으면, 나중에 협업할때 코드를 알아 볼 수 있기때문에 큰 장점이 될 수 있다.
 
+**내부 스크립트 외부로 분리하는 방법**
+자바스크립트 코드와 HTML의 코드는 분리하는게 좋다. (관리를 원할하게 하기 위해서)
+```html
+<script src="JS 파일 경로"></script>
+```
+
+그러면 한번 분리해보겠다.
+```html
+<!--statement_test.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>statement_test</title>
+    <script src="statement_test.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+```js
+//statement_test.js
+
+document.write("환영합니다.")
+```
+
+이렇게 파일을 나눠서 하면 나중에 유지보수할때 훨씬 편하다.
