@@ -76,14 +76,6 @@ document.write("환영합니다.");
 
 이렇게 작성하게 되면 HTML을 빌드했을때 화면에 "환영합니다."가 출력될것이다.
 
-<center>
-<iframe
-  src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=lucario&wt=none&l=javascript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%25ED%2599%2598%25EC%2598%2581%25ED%2595%25A9%25EB%258B%2588%25EB%258B%25A4."
-  style="width: 219px; height: 204px; border:0; transform: scale(1); overflow:hidden;"
-  sandbox="allow-scripts allow-same-origin">
-</iframe>
-</center>
-
 자바스크립트는 **객체**지향 언어인데 `document`라는 객체는 문서 객체를 의미하고, 문서 출력 메서드인 `write()`를 사용해서 문서에 출력한다.
 
 **자바스크립트에서 주석처리를 하는 방법.**
