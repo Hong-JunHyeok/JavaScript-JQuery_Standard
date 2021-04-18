@@ -1,1 +1,2 @@
-document.write("환영합니다.")
+var box = 100;
+document.write(box);

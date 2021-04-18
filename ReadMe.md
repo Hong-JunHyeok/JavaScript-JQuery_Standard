@@ -176,3 +176,55 @@ box = 200;
 document.write(box);
 ```
 이렇게 하면 정상적으로 화면에 잘 출력될것이다.
+
+이제 **자료형**에 대해서 알아보도록 하겠다.
+
+- **문자형** 
+    문자형(String)데이터는 ""나 ''로 감싸고 있다. 
+    문자형 데이터에 태그를 포함하여 출력하면 태그로 인식한다.
+    ```javascript
+    const str = "<h1>안녕!</h1>"
+    document.write(str);
+    ```
+    
+    - Result
+        <h1>안녕!</h1>
+
+- **숫자형**
+    숫자형 데이터는 단어 의미 그대로 숫자를 의미한다. 
+    주의해야 할것은 "100"은 숫자형 데이터가 아니다. **문자형**데이터다.
+    
+    Number()라는 함수를 사용하여 "100"을 숫자형으로 바꿀수 있다.
+    ```javascript
+    const num = Number("100");
+    ```
+
+- **논리형**
+    논리형 데이터는 true(참) false(거짓)이 있는데, 이 데이터는 2개의 데이터를 비교할 때 나오는 결과이다.
+    ```javascript
+    const 변수명 = true or false; 
+    //또는
+    const 변수명 = Boolean("안녕"); //true이다.
+    ```
+    `Boolean()`메서드에 데이터를 입력하면 논리형 데이터인 true나 false를 반환한다.
+
+- **null & undefined**
+    undefined는 변수가 선언되기 전의 기본값이고, null은 선언된 변수의 값이 없는 값일 경우를 가르킨다.
+    또한, null은 변수에 저장된 데이터를 비우고자 할 때 사용되는 값이다.
+    ```javascript
+    var s; //undefined
+    var t = 'hello';
+    t = null; //null
+    ```
+
+> **typeof란?**
+    typeof를 사용하면 지정한 데이터 또는 변수에 저장된 자료형을 알고 싶을 때 사용한다.
+
+```javascript
+const num = 100;
+const str = "자바스크립트";
+
+typeof num // number
+typeof str // string
+```
+
