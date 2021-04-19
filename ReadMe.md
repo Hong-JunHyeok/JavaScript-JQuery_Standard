@@ -234,9 +234,83 @@ typeof str // string
 
 **자바스크립트에서 연산자의 종류**
 - **산술 연산자**
+    산술 연산자는 + , - , * / , %가 있다. (초등학교때 배운 그거 맞다.)
+    > 산술 연산자로 연산 대상 데이터가 반드시 2개 이상 있어야 한다.
+    
+    ```javascript
+    const a = 100;
+    const b = 200;
+    document.write(a + b);
+    ```
+
 - **문자 결합 연산자**
+    문자 결합 연산자는 피연산자가 문자형 데이터이다.
+    **여러개의 문자를 하나의 문자형 데이터로 결합할 때 사용한다.**
+
+    ```javascript
+    const name = "홍준혁";
+
+    document.write("Hello My name is " + name);
+    ```
 - **대입 연산자**
+    **대입 연산자는 데이터를 변수에 저장할 때 사용한다.**
+    
+    > **복합 대입 연산자는 뭔가요?**
+    복합 대입 연산자는 += -= *= /= %= 가 있는데, 산술 연산자와 대입 연산자가 **복합적**으로 적용된 것을 말한다.
+
 - **증감 연산자**
+    **증감연산자는 ++과 --가 있다.**
+    > 변수의 값을 1만큼 감소시킨다.
+    ```javascript
+    변수 --; 
+    -- 변수;
+    ```
+    > 변수의 값을 1만큼 증가시킨다.
+    ```javascript
+    변수 ++;
+    ++ 변수;
+    ```
+
+    증감연산자의 위치에 따라서 결과도 다르다.
+    ```javascript
+    let a = 1;
+    let b = ++a;
+    //a는 2가 된다.
+    //변수 b에는 2가 저장된다.
+
+    let c = a++;
+    //변수 c에는 2가 저장된다.
+    //a는 3이 된다.
+    ```
+
 - **비교 연산자**
+    `크다`,`작다`,`같다`와 같이 비교할 때 사용하는 연산자이다.
+    ```javascript
+    const num1 = 10;
+    const num2 = 20;
+    if(num1 < num2){
+        //위 비교연산자는 true를 반환한다.
+        document.write("num2 is big");
+    }
+    ```
+
+    ```javascript
+    const num1 = 10;
+    const str1 = "10";
+
+    console.log(num1 == str2); //true
+    console.log(num1 === str2); //false
+    ```
 - **논리 연산자**
-- **삼함 조건 연산자**
+    논리 연산자는 or, and, not이 있다.
+    ```javascript
+    console.log(false || true) //true
+    console.log(false && true) //false
+    ```
+- **삼항 조건 연산자**
+    삼항 조건 연산자는 조건에 따라 실행 결과가 달라진다.
+    ```javascript
+    const result = true && false ? "true" : "false";
+
+    console.log(result); //"false"
+    ```
