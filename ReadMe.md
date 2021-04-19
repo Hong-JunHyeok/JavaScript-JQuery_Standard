@@ -72,6 +72,7 @@ if (age >= 20) {
 
 이제 실제로 한번 해볼건데, 다음과 같이 코드를 작성해보자.
 o
+
 ```javascript
 document.write("환영합니다.");
 ```
@@ -87,7 +88,7 @@ document.write("환영합니다.");
 
 /*
 이렇게
-쓰면 
+쓰면
 여러줄
 주석
 */
@@ -96,37 +97,37 @@ document.write("환영합니다.");
 ```
 
 > **주석처리를 하는 이유?**
-주석처리를 함으로서, 자바스크립트 선언문 안에 코드가 아닌 설명을 할 수있다. 그래서 내가 쓴 코드에 대한 설명같은 걸 달아놓으면, 나중에 협업할때 코드를 알아 볼 수 있기때문에 큰 장점이 될 수 있다.
+> 주석처리를 함으로서, 자바스크립트 선언문 안에 코드가 아닌 설명을 할 수있다. 그래서 내가 쓴 코드에 대한 설명같은 걸 달아놓으면, 나중에 협업할때 코드를 알아 볼 수 있기때문에 큰 장점이 될 수 있다.
 
 **내부 스크립트 외부로 분리하는 방법**
 자바스크립트 코드와 HTML의 코드는 분리하는게 좋다. (관리를 원할하게 하기 위해서)
+
 ```html
 <script src="JS 파일 경로"></script>
 ```
 
 그러면 한번 분리해보겠다.
+
 ```html
 <!--statement_test.html-->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>statement_test</title>
     <script src="statement_test.js"></script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
 ```
 
 ```js
 //statement_test.js
 
-document.write("환영합니다.")
+document.write("환영합니다.");
 ```
 
 이렇게 파일을 나눠서 하면 나중에 유지보수할때 훨씬 편하다.
@@ -141,183 +142,210 @@ document.write("환영합니다.")
 - **코드를 작성할 때 중괄호{} 또는 소괄호() 짝이 맞아야 한다.**
 
 ## 변수
+
 변수는 변하는 데이터를 저장할 수 있는 메모리 공간이다.
 **변수에는 데이터가 오직 한 개만 저장된다.**
 
 변수에 저장할 수 있는 데이터의 종류로는 문자형(String) 숫자형(Number) 논리형(Boolean) 빈(Null) 데이터 등이 있다.
 
 > **Var로 변수선언?**
-옛날 책에서는 var이라는 키워드를 사용해서 변수를 선언했다면, 모던 자바스크립트는 const나 let이라는 키워드를 사용해서 변수를 선언한다.
+> 옛날 책에서는 var이라는 키워드를 사용해서 변수를 선언했다면, 모던 자바스크립트는 const나 let이라는 키워드를 사용해서 변수를 선언한다.
 
 ```javascript
-let 변수명; 
+let 변수명;
 //or
-let 변수명 = 값; 
+let 변수명 = 값;
 ```
-위와 같은 방법으로 선언한다. 
+
+위와 같은 방법으로 선언한다.
+
 > **변수명을 짓는 방법?**
-변수명에는 한글을 사용할 수 없으며, 영문과 숫자 그리고 일부 특수문자(_,$)만 사용할 수 있다.
-그리고 변수명에는 **의미에 맞게 짓는게 좋다.** 그리고 카멜케이스로 작성합니다.
+> 변수명에는 한글을 사용할 수 없으며, 영문과 숫자 그리고 일부 특수문자(\_,$)만 사용할 수 있다.
+> 그리고 변수명에는 **의미에 맞게 짓는게 좋다.** 그리고 카멜케이스로 작성합니다.
 
 ```javascript
 let box;
 ```
+
 위 상태에서 box라는 변수는 선언은 했지만 값을 초기화를 해주지 않았기때문에 `undefined`라는 값을 가지게 된다. 이제 위에서 선언한 box에 값을 대입해보겠다.
+
 ```javascript
 box = 100;
 ```
+
 이렇게 하면 undefined에서 100이라는 값을 가지게 되었다.
 그럼 만약에 box에 200을 넣고싶으면 어떻게하면 될까?
+
 ```javascript
 box = 200;
 ```
-이렇게 하게 된다면 기존의 100의 데이터는 사라질것이다. 
+
+이렇게 하게 된다면 기존의 100의 데이터는 사라질것이다.
 **왜냐하면 변수에는 하나의 값만 담을수 있기 때문이다.**
 이제 이렇게 작성한 변수를 화면에 출력해보겠다.
+
 ```javascript
 document.write(box);
 ```
+
 이렇게 하면 정상적으로 화면에 잘 출력될것이다.
 
 이제 **자료형**에 대해서 알아보도록 하겠다.
 
-- **문자형** 
-    문자형(String)데이터는 ""나 ''로 감싸고 있다. 
-    문자형 데이터에 태그를 포함하여 출력하면 태그로 인식한다.
-    ```javascript
-    const str = "<h1>안녕!</h1>"
-    document.write(str);
-    ```
-    
-    - Result
-        <h1>안녕!</h1>
+- **문자형**
+  문자형(String)데이터는 ""나 ''로 감싸고 있다.
+  문자형 데이터에 태그를 포함하여 출력하면 태그로 인식한다.
+
+  ```javascript
+  const str = "<h1>안녕!</h1>";
+  document.write(str);
+  ```
+
+  - Result
+      <h1>안녕!</h1>
 
 - **숫자형**
-    숫자형 데이터는 단어 의미 그대로 숫자를 의미한다. 
-    주의해야 할것은 "100"은 숫자형 데이터가 아니다. **문자형**데이터다.
-    
-    Number()라는 함수를 사용하여 "100"을 숫자형으로 바꿀수 있다.
-    ```javascript
-    const num = Number("100");
-    ```
+  숫자형 데이터는 단어 의미 그대로 숫자를 의미한다.
+  주의해야 할것은 "100"은 숫자형 데이터가 아니다. **문자형**데이터다.
+
+  Number()라는 함수를 사용하여 "100"을 숫자형으로 바꿀수 있다.
+
+  ```javascript
+  const num = Number("100");
+  ```
 
 - **논리형**
-    논리형 데이터는 true(참) false(거짓)이 있는데, 이 데이터는 2개의 데이터를 비교할 때 나오는 결과이다.
-    ```javascript
-    const 변수명 = true or false; 
-    //또는
-    const 변수명 = Boolean("안녕"); //true이다.
-    ```
-    `Boolean()`메서드에 데이터를 입력하면 논리형 데이터인 true나 false를 반환한다.
+  논리형 데이터는 true(참) false(거짓)이 있는데, 이 데이터는 2개의 데이터를 비교할 때 나오는 결과이다.
+
+  ```javascript
+  const 변수명 = true or false;
+  //또는
+  const 변수명 = Boolean("안녕"); //true이다.
+  ```
+
+  `Boolean()`메서드에 데이터를 입력하면 논리형 데이터인 true나 false를 반환한다.
 
 - **null & undefined**
-    undefined는 변수가 선언되기 전의 기본값이고, null은 선언된 변수의 값이 없는 값일 경우를 가르킨다.
-    또한, null은 변수에 저장된 데이터를 비우고자 할 때 사용되는 값이다.
-    ```javascript
-    var s; //undefined
-    var t = 'hello';
-    t = null; //null
-    ```
+  undefined는 변수가 선언되기 전의 기본값이고, null은 선언된 변수의 값이 없는 값일 경우를 가르킨다.
+  또한, null은 변수에 저장된 데이터를 비우고자 할 때 사용되는 값이다.
+  ```javascript
+  var s; //undefined
+  var t = "hello";
+  t = null; //null
+  ```
 
 > **typeof란?**
+
     typeof를 사용하면 지정한 데이터 또는 변수에 저장된 자료형을 알고 싶을 때 사용한다.
 
 ```javascript
 const num = 100;
 const str = "자바스크립트";
 
-typeof num // number
-typeof str // string
+typeof num; // number
+typeof str; // string
 ```
 
 ## 연산자
 
 **자바스크립트에서 연산자의 종류**
+
 - **산술 연산자**
-    산술 연산자는 + , - , * / , %가 있다. (초등학교때 배운 그거 맞다.)
-    > 산술 연산자로 연산 대상 데이터가 반드시 2개 이상 있어야 한다.
-    
-    ```javascript
-    const a = 100;
-    const b = 200;
-    document.write(a + b);
-    ```
+  산술 연산자는 + , - , \* / , %가 있다. (초등학교때 배운 그거 맞다.)
+
+  > 산술 연산자로 연산 대상 데이터가 반드시 2개 이상 있어야 한다.
+
+  ```javascript
+  const a = 100;
+  const b = 200;
+  document.write(a + b);
+  ```
 
 - **문자 결합 연산자**
-    문자 결합 연산자는 피연산자가 문자형 데이터이다.
-    **여러개의 문자를 하나의 문자형 데이터로 결합할 때 사용한다.**
+  문자 결합 연산자는 피연산자가 문자형 데이터이다.
+  **여러개의 문자를 하나의 문자형 데이터로 결합할 때 사용한다.**
 
-    ```javascript
-    const name = "홍준혁";
+  ```javascript
+  const name = "홍준혁";
 
-    document.write("Hello My name is " + name);
-    ```
+  document.write("Hello My name is " + name);
+  ```
+
 - **대입 연산자**
-    **대입 연산자는 데이터를 변수에 저장할 때 사용한다.**
-    
-    > **복합 대입 연산자는 뭔가요?**
-    복합 대입 연산자는 += -= *= /= %= 가 있는데, 산술 연산자와 대입 연산자가 **복합적**으로 적용된 것을 말한다.
+  **대입 연산자는 데이터를 변수에 저장할 때 사용한다.**
+
+  > **복합 대입 연산자는 뭔가요?**
+  > 복합 대입 연산자는 += -= \*= /= %= 가 있는데, 산술 연산자와 대입 연산자가 **복합적**으로 적용된 것을 말한다.
 
 - **증감 연산자**
-    **증감연산자는 ++과 --가 있다.**
-    > 변수의 값을 1만큼 감소시킨다.
-    ```javascript
-    변수 --; 
-    -- 변수;
-    ```
-    > 변수의 값을 1만큼 증가시킨다.
-    ```javascript
-    변수 ++;
-    ++ 변수;
-    ```
+  **증감연산자는 ++과 --가 있다.**
 
-    증감연산자의 위치에 따라서 결과도 다르다.
-    ```javascript
-    let a = 1;
-    let b = ++a;
-    //a는 2가 된다.
-    //변수 b에는 2가 저장된다.
+  > 변수의 값을 1만큼 감소시킨다.
 
-    let c = a++;
-    //변수 c에는 2가 저장된다.
-    //a는 3이 된다.
-    ```
+  ```javascript
+  변수--;
+  --변수;
+  ```
+
+  > 변수의 값을 1만큼 증가시킨다.
+
+  ```javascript
+  변수++;
+  ++변수;
+  ```
+
+  증감연산자의 위치에 따라서 결과도 다르다.
+
+  ```javascript
+  let a = 1;
+  let b = ++a;
+  //a는 2가 된다.
+  //변수 b에는 2가 저장된다.
+
+  let c = a++;
+  //변수 c에는 2가 저장된다.
+  //a는 3이 된다.
+  ```
 
 - **비교 연산자**
-    `크다`,`작다`,`같다`와 같이 비교할 때 사용하는 연산자이다.
-    ```javascript
-    const num1 = 10;
-    const num2 = 20;
-    if(num1 < num2){
-        //위 비교연산자는 true를 반환한다.
-        document.write("num2 is big");
-    }
-    ```
+  `크다`,`작다`,`같다`와 같이 비교할 때 사용하는 연산자이다.
 
-    ```javascript
-    const num1 = 10;
-    const str1 = "10";
+  ```javascript
+  const num1 = 10;
+  const num2 = 20;
+  if (num1 < num2) {
+    //위 비교연산자는 true를 반환한다.
+    document.write("num2 is big");
+  }
+  ```
 
-    console.log(num1 == str2); //true
-    console.log(num1 === str2); //false
-    ```
+  ```javascript
+  const num1 = 10;
+  const str1 = "10";
+
+  console.log(num1 == str2); //true
+  console.log(num1 === str2); //false
+  ```
+
 - **논리 연산자**
-    논리 연산자는 or, and, not이 있다.
-    ```javascript
-    console.log(false || true) //true
-    console.log(false && true) //false
-    ```
+  논리 연산자는 or, and, not이 있다.
+  ```javascript
+  console.log(false || true); //true
+  console.log(false && true); //false
+  ```
 - **삼항 조건 연산자**
-    삼항 조건 연산자는 조건에 따라 실행 결과가 달라진다.
-    ```javascript
-    const result = true && false ? "true" : "false";
+  삼항 조건 연산자는 조건에 따라 실행 결과가 달라진다.
 
-    console.log(result); //"false"
-    ```
+  ```javascript
+  const result = true && false ? "true" : "false";
+
+  console.log(result); //"false"
+  ```
 
 ### 적정 체중을 구하는 테스트기 만들기
 
 **🛠적정 체중 구하는 법.**
+
 ```
 적정 체중 = (본인 신장 - 100) x 0.9
 ```
@@ -326,30 +354,43 @@ typeof str // string
 //source code
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>체중 구하기</title>
     <script>
-        const name = prompt("당신의 이름은?","");
-        const height = prompt("당신의 신장은?","0");
-        const weight = prompt("당신의 몸무게는?","0");
+      const name = prompt("당신의 이름은?", "");
+      const height = prompt("당신의 신장은?", "0");
+      const weight = prompt("당신의 몸무게는?", "0");
 
-        document.write(getNormal());
+      document.write(getNormal());
 
-        function getNormal(){
-            const normal = (height- 100) * 0.9;
-            let result = weight >= normal - 5 && weight <= normal + 5;
-            result = result ? "적정 체중입니다." : "적정 체중이 아닙니다.";
-            return name+" 님은 "+result;
-        }    
+      function getNormal() {
+        const normal = (height - 100) * 0.9;
+        let result = weight >= normal - 5 && weight <= normal + 5;
+        result = result ? "적정 체중입니다." : "적정 체중이 아닙니다.";
+        return name + " 님은 " + result;
+      }
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
 ```
 
+### 진영이의 하루 지출 내역
 
+```html
+<script>
+  const price1 = 3000;
+  const price2 = 6000;
+  const price3 = 3000;
+
+  const sum = price1 + price2 + price3;
+  if (sum > 10000) {
+    alert(sum - 10000 + "원 초과!");
+  } else {
+    alert("돈 관리 잘했어요!");
+  }
+</script>
+```
