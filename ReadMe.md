@@ -777,6 +777,42 @@ console.log(`연말까지 ${result}일 남았습니다.`);
 - Math.PI
     > 원주율 상수를 반환합니다.
 
+**0 ~ 10까지 랜덤숫자**
+```javascript
+const randomNum = Math.floor(Math.random() * 11);
+```
+
+**배열 객체**
+변수에는 한가지의 데이터만 저장된다고 했었는데, 그러면 여러 개의 데이터를 저장할려면 **배열**을 사용해야 된다.
+```javascript
+변수 = new Array(값);
+```
+
+```javascript
+const arr = new Array(1,2,3);
+```
+
+배열은 각 인덱스에 접근할 수 있다.
+```javascript
+const arr = new Array(1,2,3);
+
+console.log(arr[1]);
+```
+
+### 배열 메서드
+- join 
+- reverse
+- sort
+- slice
+- splice
+- concat
+- pop
+- push
+- shift
+- unshift
+- length
+
+
 ## 브라우저 객체 모델
 ## 문서 객체 모델
 
