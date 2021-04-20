@@ -706,6 +706,77 @@ HTML문서의 기본 구조는 최상위 객체로 html이 있으며, 하위 객
 > 이제부터 위에 설명한 세가지의 객체에 대해서 자세히 알아보도록 하겠다.
 
 ## 내장 객체
+위에서 언급했듯 내장 객체는 자바스크립트 엔진에 있는 객체이다.
+
+내장 객체를 생성하는 기본형에 대해서 알아보자.
+```javascript
+참조_변수(인스턴스_이름) = new 생성_함수();
+```
+이제 내장 객체를 이용해서 tv라는 객체를 생성을 해보겠다.
+```javascript
+const tv = new Object();
+
+tv.color="black";
+tv.price=3000000;
+tv.intro= () => {
+  console.log("TV 색깔 : "+tv.color);
+  console.log("TV 가격 : "+tv.price);
+}
+
+tv.intro();
+//객체 메서드 호출
+```
+
+자바스크립트에서 지원하는 Object객체 를 사용해 보았는데, 이번에는 `Date`라는 객체를 사용해보겠다. 
+
+```javascript
+참조 변수 = new Date();
+```
+
+```javascript
+const today = new Date();
+
+console.log(today.getHours());
+```
+
+> 남은 일 수(밀리초) = 특정 날짜 객체 - 현재 날짜 객체
+
+```javascript
+const today = new Date();
+const nowYear = today.getFullYear();
+
+const theDate = new Date(nowYear , 11, 31);
+const diffDate = theDate.getTime() - today.getTime();
+
+const result = Math.ceil(diffDate/(60 * 1000 * 60 * 24));
+console.log(`연말까지 ${result}일 남았습니다.`);
+```
+
+**수학 객체**
+
+수학 객체는 알고리즘 풀때 자주 쓰이므로 알아두는게 좋다.
+
+- Math.abs()
+    > 숫자의 절대값을 반환합니다.
+- Math.max()
+    > 숫자 중 가장 큰 값을 반환합니다.
+- Math.min()
+    > 숫자 중 가장 작은 값을 반환합니다.
+- Math.pow()
+    > 숫자의 거듭제곱값을 반환합니다.
+- Math.random()
+    > 0 ~ 1 사이의 난수를 반환합니다.
+- Math.round()
+    > 소수점 첫째 자리에서 반올림하여 정수를 반환합니다.
+- Math.ceil()
+    > 소수점 첫째에서 무조건 올림하여 정수를 반환합니다.
+- Math.floor()
+    > 소수점 첫째에서 무조건 내림하여 정수를 반환합니다.
+- Math.sqrt()
+    > 숫자의 제곱근값을 반환합니다.
+- Math.PI
+    > 원주율 상수를 반환합니다.
+
 ## 브라우저 객체 모델
 ## 문서 객체 모델
 
