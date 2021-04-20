@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>q
+    <script>
+        const id = "qwerty";
+        const pw = "1234";
+
+        const user_id = prompt("아이디는?","");
+        const user_pw = prompt("비밀번호는?","");
+
+        if(id === user_id){
+            if(pw === user_pw){
+                alert("로그인에 성공했습니다.");
+                document.write("환영합니다.");
+            }
+            else{
+                document.write("비밀번호가 틀렸습니다.")
+            }
+        }else{
+            document.write("아이디가 틀렸습니다.")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

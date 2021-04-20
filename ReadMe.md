@@ -380,6 +380,8 @@ typeof str; // string
 
 ### 진영이의 하루 지출 내역
 
+총 돈이 10000원이 넘으면 얼마나 초과했는지 보여주고 아닐 시에는 돈 관리 잘했다고 칭찬하는 프로그램.
+
 ```html
 <script>
   const price1 = 3000;
@@ -394,3 +396,117 @@ typeof str; // string
   }
 </script>
 ```
+
+## 조건문 
+조건문은 조건식의 값이 참인지 거짓인지에 따라 자바스크립트 코드를 제어한다.
+**if 문**
+```javascript
+if(조건식){
+    자바스크립트 코드;
+}
+```
+if문에 조건식을 만족 할때만 코드를 실행한다.
+만약에 조건식에 다음과 같은 값이 오게된다면,
+> 0 , null , "" , undefined
+
+false를 의미하므로 조건문을 실행하지 않는다.
+
+**if ~ else 문**
+```javascript
+if(조건식){
+    자바스크립트 코드;
+}
+else{
+    자바스크립트 코드;
+}
+```
+else문은 if문의 조건을 만족하지 못했을 때에 실행할 코드이다.
+
+**if ~ else if ~ else 문**
+```javascript
+if(조건식){
+    자바스크립트 코드;
+}else if(조건식){
+    자바스크립트 코드;
+}
+else if(조건식){
+    자바스크립트 코드;
+}
+else if(조건식){
+    자바스크립트 코드;
+}
+.
+.
+.
+else {
+    자바스크립트 코드;
+}
+```
+if로부터 조건에 충족하지 않을때 차레대로 else if문을 검토하게 된다. 
+그렇게 하다가 중간에 true를 반환하면 그에 해당하는 자바스크립트 코드를 실행하고 조건문을 종료한다.
+
+**중첩 if 문**
+```javascript
+if(조건식){
+    if(조건식){
+        ...
+    }
+}
+```
+위와 같은 코드처럼 중첩하여 조건문을 사용하는 것을 의미한다.
+
+**지금까지 배운 조건문으로 로그인을 구현해보겠다.**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>q
+    <script>
+        const id = "qwerty";
+        const pw = "1234";
+
+        const user_id = prompt("아이디는?","");
+        const user_pw = prompt("비밀번호는?","");
+
+        if(id === user_id){
+            if(pw === user_pw){
+                alert("로그인에 성공했습니다.");
+                document.write("환영합니다.");
+            }
+            else{
+                document.write("비밀번호가 틀렸습니다.")
+            }
+        }else{
+            document.write("아이디가 틀렸습니다.")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+## 선택문
+
+<strong>선택문(switch)</strong>문은 변수에 저장된 값과 switch문에 있는 경우(case)의 값을 검사하여 변수와 경우의 값이 일치하는 경우 그에 해당하는 코드를 실행한다.
+
+```javascript
+const value = 초기값;
+
+switch(value){
+    case 값1:
+        코드1;
+    case 값2:
+        코드2;
+    case 값3:
+        코드3;
+    ...
+    default 코드;
+}
+```
+
