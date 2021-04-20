@@ -600,5 +600,52 @@ while (i <= 100) {
 console.log("==The End==");
 ```
 
+**do while문**
+do while은 while문과 유사하지만, 조금 다른점이 있다면 조건의 여부와는 상관없이 무조건 처음 한번은 실행하고 조건식을 검사한다.
 
+```javascript
+let value = 초기값;
 
+do{
+    자바스크립트 코드;
+    증감식;
+}while(조건식);
+```
+
+```javascript
+let i = 0;
+
+do{
+    console.log(i);
+    i++;
+}while(i < 10)
+```
+
+**for 문**
+for문은 조건식을 만족할 때까지 특정 코드를 반복하여 실행한다.
+
+```javascript
+for(초기값; 조건식; 증감식){
+    자바스크립트 코드;
+}
+```
+
+```javascript
+for(let i = 0 ; i < 10; i ++){
+    console.log(i);
+}
+```
+
+**break 문**
+반복문에서 break를 만나게 되면 그 반복문은 강제로 중단된다.
+
+```javascript
+for(let i = 0; i < 100; i ++){
+    if(i === 70){
+        break;
+    }
+}
+```
+
+**continue 문**
+반복문에서만 사용할 수 있는데, 반복을 하다가 continue를 만나게 되면 continue 밑에 있는 코드들을 무시하고 바로 다음 조건식으로 이동한다.
