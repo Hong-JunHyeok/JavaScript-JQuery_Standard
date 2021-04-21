@@ -878,55 +878,193 @@ console.log(arr[1]);
 ## 브라우저 객체 모델
 
 - **window 객체의 메서드 종류**
-    - open
-        > URL 페이지를 새 창으로 나타냅니다.
-    - alert
-        > 경고 창을 나타내고 데이터를 보여줍니다.
-    - prompt
-        > 질문과 답변으로 질의응답 창을 나타냅니다.
-    - move
-        > 지정한 새 창의 위치를 이동합니다
-    - resizeTo
-        > 지정한 새 창의 위치를 이동합니다.
-    - setInterval
-        > 지속적으로 일정한 시간 간격으로 함수를 호출하여 코드를 실행합니다.
-    - setTimeout
-        > 단 한 번 일정한 시간 간격으로 함수를 호출하여 코드를 실행한다.
+  - open
+    > URL 페이지를 새 창으로 나타냅니다.
+  - alert
+    > 경고 창을 나타내고 데이터를 보여줍니다.
+  - prompt
+    > 질문과 답변으로 질의응답 창을 나타냅니다.
+  - move
+    > 지정한 새 창의 위치를 이동합니다
+  - resizeTo
+    > 지정한 새 창의 위치를 이동합니다.
+  - setInterval
+    > 지속적으로 일정한 시간 간격으로 함수를 호출하여 코드를 실행합니다.
+  - setTimeout
+    > 단 한 번 일정한 시간 간격으로 함수를 호출하여 코드를 실행한다.
 - **screen 객체의 속성 종류**
-    - screen.width
-        > 화면의 너비값을 반환
-    - screen.height
-        > 화면의 높이값을 반환
-    - screen.availWidth
-        > 작업 표시줄을 제외한 화면의 너비값을 반환
-    - screen.availHeight
-        > 작업 표시줄을 제외한 화면의 높이값을 반환
-    - screen.screenDepth
-        > 사용자 모니터가 표현 가능한 컬러 bit를 반환 
+  - screen.width
+    > 화면의 너비값을 반환
+  - screen.height
+    > 화면의 높이값을 반환
+  - screen.availWidth
+    > 작업 표시줄을 제외한 화면의 너비값을 반환
+  - screen.availHeight
+    > 작업 표시줄을 제외한 화면의 높이값을 반환
+  - screen.screenDepth
+    > 사용자 모니터가 표현 가능한 컬러 bit를 반환
 - **location 객체의 속성,메서드 종류**
-    - location.href
-        > 주소 영역의 참조 주소를 설정하거나 URL을 반환한다.
-    - location.hash
-        > URL의 해시값을 반환한다.
-    - location.hostname
-        > URL의 호스트 이름을 설정하거나 반환한다.
-    - location.host
-        > URL의 호스트 이름과 포트번호를 반환한다.
-    - location.protocol
-        > URL 프로토콜을 반환한다.
-    - location.search
-        > URL의 쿼리를 반환한다.
-    - location.reload()
-        > 페이지를 새로고침한다.
+
+  - location.href
+    > 주소 영역의 참조 주소를 설정하거나 URL을 반환한다.
+  - location.hash
+    > URL의 해시값을 반환한다.
+  - location.hostname
+    > URL의 호스트 이름을 설정하거나 반환한다.
+  - location.host
+    > URL의 호스트 이름과 포트번호를 반환한다.
+  - location.protocol
+    > URL 프로토콜을 반환한다.
+  - location.search
+    > URL의 쿼리를 반환한다.
+  - location.reload()
+    > 페이지를 새로고침한다.
 
 - **history 객체의 속성 종류**
-    - history.back()
-        > 이전 방문 사이트로 이동한다.
-    - history.foward()  
-        > 다음 방문 사이트로 이동한다.
-    - history.go()
-        > 이동 숫자에 -2를 입력하면 2단계 이전의 방문 사이트로 이동한다.
-    - history.length
-        > 방문 기록에 저장된 목록의 개수를 반환한다.
+  - history.back()
+    > 이전 방문 사이트로 이동한다.
+  - history.foward()
+    > 다음 방문 사이트로 이동한다.
+  - history.go()
+    > 이동 숫자에 -2를 입력하면 2단계 이전의 방문 사이트로 이동한다.
+  - history.length
+    > 방문 기록에 저장된 목록의 개수를 반환한다.
 
-## 문서 객체 모델
+## 함수
+
+**함수란?**
+
+> 변수에는 데이터를 저장한다고 했었는데, 함수에는 코드를 메모리에 저장했다가 필요할때 마다 호출하여 사용할 수 있다.
+
+- 함수는 자바스크립트 코드를 저장한다.
+- 출력문, 제어문 등의 코드를 저장하고 데이터를 반환한다.
+
+```javascript
+function 함수명(){
+    자바스크립트 코드;
+}
+or
+const 함수명 = () => {
+    자바스크립트 코드;
+}
+```
+
+함수정의문 {...} 안에 작성된 코드는 즉시 실행되지 않고, 메모리에 할당되어 있다가 함수가 호출되면 실행하는 형식이다.
+
+> **function과 function()은 다르다?**
+> function은 함수 그 자체를 의미하는거고 function()은 함수를 실행하라는 의미이다.
+
+```javascript
+function sayHello() {
+  console.log("Hello");
+}
+
+sayHello();
+```
+
+**자바스크립트를 이용해 버튼을 클릭할때 마다 배경색을 바꾸는 프로그램**
+
+![image](https://user-images.githubusercontent.com/48292190/115477708-7d336a80-a27f-11eb-8854-2145107fada8.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background</title>
+    <script>
+      const color = ["white", "yellow", "aqua", "purple"];
+
+      let i = 0;
+      const changeColor = () => {
+        i++;
+        if (i >= color.length) {
+          i = 0;
+        }
+        console.log(color[i]);
+        const bodyTag = document.querySelector("body");
+        bodyTag.style.backgroundColor = color[i];
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="changeColor()">배경색 바꾸기</button>
+  </body>
+</html>
+```
+
+**매개 변수가 있는 함수 정의문**
+함수를 호출하면서 값을 전달할수 있는 방법은 매개 변수를 받으면 된다.
+```javascript
+function sayHelloWithName(name){
+    console.log(`${name}, Hello!`);
+}
+```
+이때, 매개변수는 한개뿐만이 아니라 여러개가 될 수도있다.
+
+**함수에서의 return문의 역할**
+
+return문은 함수에서 결괏값을 반환할 때 사용한다. 또한, 함수가 종료된다.
+
+```javascript
+//함수가 종료
+function returnExample(){
+    console.log("Hello");
+    console.log("Hello");
+    console.log("Hello");
+    return;
+    console.log("Hello"); // not working
+}
+```
+
+```javascript
+//결과값을 반환
+function returnValueExample(){
+    return 10 + 20;
+}
+
+const value = returnValueExample();
+console.log(value); //30
+```
+
+**함수 스코프란?**
+> 함수 스코프의 의미는 유효 범위를 의미한다.
+
+스코프를 이해하기 위해서는 Local변수와 Global변수를 이해해야 한다.
+
+```javascript
+let global; // 글로벌 변수
+
+function a(){
+    let local; // 로컬 변수
+}
+```
+
+```javascript
+let score = 100;
+
+function a(){
+    let score = 50;
+
+    console.log(score); //50
+}
+
+a();
+
+console.log(score); //100
+```
+
+**전역 함수와 지역 함수**
+```javascript
+function a(){ // 전역 함수
+    자바스크립트 코드;
+}
+
+function b(){
+    function c(){ // 지역 함수
+        자바스크립트 코드;
+    }
+}
+```
