@@ -13,6 +13,7 @@
 - [선택문](#선택문)
 - [반복문](#반복문)
 - [객체](#객체)
+- [함수](#함수)
 
 # 배경
 
@@ -1068,3 +1069,108 @@ function b(){
     }
 }
 ```
+
+## 객체 생성자 함수의 활용 
+
+
+
+```javascript
+function CheckWeight(name , height , weight){
+  this.userName = name;
+  this.userHeight = height;
+  this.userWeight = weight;
+  this.maxWeight;
+  this.minWeight;
+  
+  this.getInfo = () => {
+    let str = "";
+    str += "이름" + this.userName + ",";
+    str += "키:" + this.userHeight + ",";
+    str += "몸무게:" + this.userWeight + "<br>";
+
+    return str;
+  }
+
+  this.getResult = () => {
+    this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+    this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+    if(this.userWeight >= this.minWeight && this.minWeight <= this.maxWeight){
+      return "정상 몸무게입니다.";
+    }else if(this.userWeight < this.minWeight){
+      return "정상  몸무게보다 미달입니다.";
+    }else{
+      return "정상 뭄무게보다 초과입니다.";
+    }
+  }
+}
+```
+
+다음의 예제는 메모리 절약을 위한 프로토타입을 사용하는 방법이다.
+
+## 프로토타입 사용하기
+
+객체를 생성한다면 생성한만큼 메모리를 차지하게 된다.
+메모리 공간을 절약하기 위해서 **프로토타입**을 사용하면 된다.
+프로토타입을 사용하여 등록한 함수는 원형(프로토타입)에서 생성된 객체를 공유할 수 있다.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function CheckWeight(name, height, weight) {
+        this.userName = name;
+        this.userHeight = height;
+        this.userWeight = weight;
+        this.maxWeight;
+        this.minWeight;
+      }
+      CheckWeight.prototype.getInfo = function() {
+        let str = "";
+        str += "이름" + this.userName + ",";
+        str += "키:" + this.userHeight + ",";
+        str += "몸무게:" + this.userWeight + "<br>";
+
+        return str;
+      };
+
+      CheckWeight.prototype.getResult = function() {
+        this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+        this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+        if (
+          this.userWeight >= this.minWeight &&
+          this.minWeight <= this.maxWeight
+        ) {
+          return "정상 몸무게입니다.";
+        } else if (this.userWeight < this.minWeight) {
+          return "정상  몸무게보다 미달입니다.";
+        } else {
+          return "정상 뭄무게보다 초과입니다.";
+        }
+      };
+
+      const hong = new CheckWeight("홍준혁", 172, 78);
+      const sol = new CheckWeight("정든솔", 171, 46);
+
+      document.write(hong.getInfo());
+      document.write(hong.getResult(), "<br>");
+
+      document.write(sol.getInfo());
+      document.write(sol.getResult(), "<br>");
+
+      console.log(hong.getResult == sol.getResult);
+    </script>
+  </head>
+  <body></body>
+</html>
+
+```
+
+여기서 () => {} 화살표 함수를 쓰면 this가 undefined로 나올것이다.
+function으로 키워드를 변경해서 사용해야 한다.
